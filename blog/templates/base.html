@@ -61,10 +61,22 @@
                 <i class="bi bi-chevron-down dropdown-indicator"></i
               ></a>
               <ul>
-                <li><a href="#">Sports</a></li>
-                <li><a href="#">Politics</a></li>
-                <li><a href="#">Business</a></li>
-                <li><a href="#">Fashion</a></li>
+                <li>
+                  <a href="{% url 'categories' %}?categories=Sports">Sports</a>
+                </li>
+                <li>
+                  <a href="{% url 'categories'%}?categories=Politics"
+                    >Politics</a
+                  >
+                </li>
+                <li>
+                  <a href="{% url 'categories'%}?categories=Business"
+                    >Business</a
+                  >
+                </li>
+                <li>
+                  <a href="{% url 'categories'%}?categories=Fashion">Fashion</a>
+                </li>
               </ul>
             </li>
 
@@ -142,16 +154,24 @@
               <h3 class="footer-heading">Categories</h3>
               <ul class="footer-links list-unstyled">
                 <li>
-                  <a href=""><i class="bi bi-chevron-right"></i> Business</a>
+                  <a href="{% url 'categories'%}?category=Business"
+                    ><i class="bi bi-chevron-right"></i> Business</a
+                  >
                 </li>
                 <li>
-                  <a href=""><i class="bi bi-chevron-right"></i> Sports</a>
+                  <a href="{% url 'categories'%}?category=Sports"
+                    ><i class="bi bi-chevron-right"></i> Sports</a
+                  >
                 </li>
                 <li>
-                  <a href=""><i class="bi bi-chevron-right"></i> Politics</a>
+                  <a href="{% url 'categories'%}?category=Politics"
+                    ><i class="bi bi-chevron-right"></i> Politics</a
+                  >
                 </li>
                 <li>
-                  <a href=""><i class="bi bi-chevron-right"></i> Fashion</a>
+                  <a href="{% url 'categories'%}?category=Fashion"
+                    ><i class="bi bi-chevron-right"></i> Fashion</a
+                  >
                 </li>
               </ul>
             </div>
@@ -267,13 +287,11 @@
 
             <div class="col-md-6">
               <div class="social-links mb-3 mb-lg-0 text-center text-md-end">
-                <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
-                <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-                <a href="#" class="instagram"
-                  ><i class="bi bi-instagram"></i
-                ></a>
-                <a href="#" class="google-plus"><i class="bi bi-skype"></i></a>
-                <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+                <a href="" class="twitter"><i class="bi bi-twitter"></i></a>
+                <a href="" class="facebook"><i class="bi bi-facebook"></i></a>
+                <a href="" class="instagram"><i class="bi bi-instagram"></i></a>
+                <a href="" class="google-plus"><i class="bi bi-skype"></i></a>
+                <a href="" class="linkedin"><i class="bi bi-linkedin"></i></a>
               </div>
             </div>
           </div>
