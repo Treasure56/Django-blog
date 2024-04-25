@@ -1,198 +1,107 @@
-{% extends 'base.html' %} {% load static %} {% block content %}
+{%extends 'base.html'%}
+{% load static %}
+{% block content%}
 
 <main id="main">
-  <section class="single-post-content">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-9 post-content" data-aos="fade-up">
-          <!-- ======= Single Post Content ======= -->
-          <div class="single-post">
-            <div class="post-meta">
-              <span class="date">Business</span>
-              <span class="mx-1">&bullet;</span> <span>Jul 5th '22</span>
-            </div>
-            <h1 class="mb-5">
-              13 Amazing Poems from Shel Silverstein with Valuable Life Lessons
-            </h1>
-            <p>
-              <span class="firstcharacter">L</span>orem ipsum dolor sit, amet
-              consectetur adipisicing elit. Ratione officia sed, suscipit
-              distinctio, numquam omnis quo fuga ipsam quis inventore voluptatum
-              recusandae culpa, unde doloribus saepe labore alias voluptate
-              expedita? Dicta delectus beatae explicabo odio voluptatibus quas,
-              saepe qui aperiam autem obcaecati, illo et! Incidunt voluptas
-              culpa neque repellat sint, accusamus beatae, cumque autem tempore
-              quisquam quam eligendi harum debitis.
-            </p>
 
-            <figure class="my-4">
-              <img
-                src="{% static'img/post-landscape-1.jpg' %}"
-                alt=""
-                class="img-fluid"
-              />
-            </figure>
+    <section class="single-post-content">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-9 post-content" data-aos="fade-up">
+
+            <!-- ======= Single Post Content ======= -->
+            <p class="single-post">
+              <div class="post-meta"><span class="date">{{ blog.category }}</span> <span class="mx-1">&bullet;</span> <span>Jul 5th '22</span></div>
+              <h1 class="mb-5">{{ blog.title }}</h1>
+              <div><span class="firstcharacter"></span></div> <p>{{ blog.content }}</p>
+
+              <figure class="my-4">
+                <img src="{{ blog.photo.url }}" alt="" class="img-fluid">
+
+              </figure>
+              
+            </div><!-- End Single Post Content -->
+
+            
+
           </div>
-          <!-- End Single Post Content -->
-        </div>
-        <div class="col-md-3">
-          <!-- ======= Sidebar ======= -->
-          <div class="aside-block">
-            <ul
-              class="nav nav-pills custom-tab-nav mb-4"
-              id="pills-tab"
-              role="tablist"
-            >
-              <li class="nav-item" role="presentation">
-                <button
-                  class="nav-link active"
-                  id="pills-popular-tab"
-                  data-bs-toggle="pill"
-                  data-bs-target="#pills-popular"
-                  type="button"
-                  role="tab"
-                  aria-controls="pills-popular"
-                  aria-selected="true"
-                >
-                  Popular
-                </button>
-              </li>
-            </ul>
+          <div class="col-md-3">
+            <!-- ======= Sidebar ======= -->
+            <div class="aside-block">
 
-            <div class="tab-content" id="pills-tabContent">
-              <!-- Popular -->
-              <div
-                class="tab-pane fade show active"
-                id="pills-popular"
-                role="tabpanel"
-                aria-labelledby="pills-popular-tab"
-              >
-                <div class="post-entry-1 border-bottom">
-                  <div class="post-meta">
-                    <span class="date">Sport</span>
-                    <span class="mx-1">&bullet;</span> <span>Jul 5th '22</span>
-                  </div>
-                  <h2 class="mb-2">
-                    <a href="#"
-                      >How to Avoid Distraction and Stay Focused During Video
-                      Calls?</a
-                    >
-                  </h2>
-                  <span class="author mb-3 d-block">Jenny Wilson</span>
-                </div>
+              <ul class="nav nav-pills custom-tab-nav mb-4" id="pills-tab" role="tablist">
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link active" id="pills-popular-tab" data-bs-toggle="pill" data-bs-target="#pills-popular" type="button" role="tab" aria-controls="pills-popular" aria-selected="true">Popular</button>
+                </li>
+              </ul>
 
-                <div class="post-entry-1 border-bottom">
-                  <div class="post-meta">
-                    <span class="date">Lifestyle</span>
-                    <span class="mx-1">&bullet;</span> <span>Jul 5th '22</span>
-                  </div>
-                  <h2 class="mb-2">
-                    <a href="#"
-                      >17 Pictures of Medium Length Hair in Layers That Will
-                      Inspire Your New Haircut</a
-                    >
-                  </h2>
-                  <span class="author mb-3 d-block">Jenny Wilson</span>
-                </div>
+              <div class="tab-content" id="pills-tabContent">
 
-                <div class="post-entry-1 border-bottom">
-                  <div class="post-meta">
-                    <span class="date">Culture</span>
-                    <span class="mx-1">&bullet;</span> <span>Jul 5th '22</span>
+                <!-- Popular -->
+                <div class="tab-pane fade show active" id="pills-popular" role="tabpanel" aria-labelledby="pills-popular-tab">
+                  <div class="post-entry-1 border-bottom">
+                    <div class="post-meta"><span class="date">{{ blog.category}}</span> <span class="mx-1">&bullet;</span> <span>Jul 5th '22</span></div>
+                    <h2 class="mb-2"><a href="#">{{ blog.title}}</a></h2>
+                    <span class="author mb-3 d-block">{{ blog.reporter}}</span>
                   </div>
-                  <h2 class="mb-2">
-                    <a href="#"
-                      >9 Half-up/half-down Hairstyles for Long and Medium
-                      Hair</a
-                    >
-                  </h2>
-                  <span class="author mb-3 d-block">Jenny Wilson</span>
-                </div>
 
-                <div class="post-entry-1 border-bottom">
-                  <div class="post-meta">
-                    <span class="date">Lifestyle</span>
-                    <span class="mx-1">&bullet;</span> <span>Jul 5th '22</span>
+                  <div class="post-entry-1 border-bottom">
+                    <div class="post-meta"><span class="date">Lifestyle</span> <span class="mx-1">&bullet;</span> <span>Jul 5th '22</span></div>
+                    <h2 class="mb-2"><a href="#">17 Pictures of Medium Length Hair in Layers That Will Inspire Your New Haircut</a></h2>
+                    <span class="author mb-3 d-block">Jenny Wilson</span>
                   </div>
-                  <h2 class="mb-2">
-                    <a href="#"
-                      >Life Insurance And Pregnancy: A Working Mom’s Guide</a
-                    >
-                  </h2>
-                  <span class="author mb-3 d-block">Jenny Wilson</span>
-                </div>
 
-                <div class="post-entry-1 border-bottom">
-                  <div class="post-meta">
-                    <span class="date">Business</span>
-                    <span class="mx-1">&bullet;</span> <span>Jul 5th '22</span>
+                  <div class="post-entry-1 border-bottom">
+                    <div class="post-meta"><span class="date">Culture</span> <span class="mx-1">&bullet;</span> <span>Jul 5th '22</span></div>
+                    <h2 class="mb-2"><a href="#">9 Half-up/half-down Hairstyles for Long and Medium Hair</a></h2>
+                    <span class="author mb-3 d-block">Jenny Wilson</span>
                   </div>
-                  <h2 class="mb-2">
-                    <a href="#"
-                      >The Best Homemade Masks for Face (keep the Pimples
-                      Away)</a
-                    >
-                  </h2>
-                  <span class="author mb-3 d-block">Jenny Wilson</span>
-                </div>
 
-                <div class="post-entry-1 border-bottom">
-                  <div class="post-meta">
-                    <span class="date">Lifestyle</span>
-                    <span class="mx-1">&bullet;</span> <span>Jul 5th '22</span>
+                  <div class="post-entry-1 border-bottom">
+                    <div class="post-meta"><span class="date">Lifestyle</span> <span class="mx-1">&bullet;</span> <span>Jul 5th '22</span></div>
+                    <h2 class="mb-2"><a href="#">Life Insurance And Pregnancy: A Working Mom’s Guide</a></h2>
+                    <span class="author mb-3 d-block">Jenny Wilson</span>
                   </div>
-                  <h2 class="mb-2">
-                    <a href="#"
-                      >10 Life-Changing Hacks Every Working Mom Should Know</a
-                    >
-                  </h2>
-                  <span class="author mb-3 d-block">Jenny Wilson</span>
-                </div>
+
+                  <div class="post-entry-1 border-bottom">
+                    <div class="post-meta"><span class="date">Business</span> <span class="mx-1">&bullet;</span> <span>Jul 5th '22</span></div>
+                    <h2 class="mb-2"><a href="#">The Best Homemade Masks for Face (keep the Pimples Away)</a></h2>
+                    <span class="author mb-3 d-block">Jenny Wilson</span>
+                  </div>
+
+                  <div class="post-entry-1 border-bottom">
+                    <div class="post-meta"><span class="date">Lifestyle</span> <span class="mx-1">&bullet;</span> <span>Jul 5th '22</span></div>
+                    <h2 class="mb-2"><a href="#">10 Life-Changing Hacks Every Working Mom Should Know</a></h2>
+                    <span class="author mb-3 d-block">Jenny Wilson</span>
+                  </div>
+                </div> <!-- End Popular -->
               </div>
-              <!-- End Popular -->
             </div>
-          </div>
 
-          <div class="aside-block">
-            <h3 class="aside-title">Video</h3>
-            <div class="video-post">
-              <a
-                href="https://www.youtube.com/watch?v=AiFfDjmd0jU"
-                class="glightbox link-video"
-              >
-                <span class="bi-play-fill"></span>
-                <img
-                  src="{% static 'img/post-landscape-5.jpg' %}"
-                  alt=""
-                  class="img-fluid"
-                />
-              </a>
-            </div>
-          </div>
-          <!-- End Video -->
+            <div class="aside-block">
+              <h3 class="aside-title">Video</h3>
+              <div class="video-post">
+                <a href="https://www.youtube.com/watch?v=AiFfDjmd0jU" class="glightbox link-video">
+                  <span class="bi-play-fill"></span>
+                  <img src="{% static 'img/post-landscape-5.jpg' %}" alt="" class="img-fluid">
+                </a>
+              </div>
+            </div><!-- End Video -->
 
-          <div class="aside-block">
-            <h3 class="aside-title">Categories</h3>
-            <ul class="aside-links list-unstyled">
-              <li>
-                <a href=""><i class="bi bi-chevron-right"></i> Business</a>
-              </li>
-              <li>
-                <a href=""><i class="bi bi-chevron-right"></i> Sports</a>
-              </li>
-              <li>
-                <a href=""><i class="bi bi-chevron-right"></i> Politics</a>
-              </li>
-              <li>
-                <a href=""><i class="bi bi-chevron-right"></i> Fashion</a>
-              </li>
-            </ul>
+            <div class="aside-block">
+              <h3 class="aside-title">Categories</h3>
+              <ul class="aside-links list-unstyled">
+                <li><a href="{% url 'categories' %}?category=Business"><i class="bi bi-chevron-right"></i> Business</a></li>
+                <li><a href="{% url 'categories' %}?category=Sports"><i class="bi bi-chevron-right"></i> Sports</a></li>
+                <li><a href="{% url 'categories' %}?category=Politics"><i class="bi bi-chevron-right"></i> Politics</a></li>
+                <li><a href="{% url 'categories' %}?category=Fashion"><i class="bi bi-chevron-right"></i> Fashion</a></li>
+              </ul>
+            </div><!-- End Categories -->
+            
           </div>
-          <!-- End Categories -->
         </div>
       </div>
-    </div>
-  </section>
-</main>
-<!-- End #main -->
-{ % endblock %}
+    </section>
+  </main><!-- End #main -->
+
+{% endblock %}

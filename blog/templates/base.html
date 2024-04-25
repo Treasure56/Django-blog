@@ -1,4 +1,4 @@
-{% load static %}
+{% load static%}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -10,9 +10,9 @@
     <meta content="" name="keywords" />
 
     <!-- Favicons -->
-    <link href="{% static '/img/favicon.png ' %}" rel="icon" />
+    <link href="{% static 'img/favicon.png' %}" rel="icon" />
     <link
-      href="{% static '/img/apple-touch-icon.png' %}"
+      href="{% static 'img/apple-touch-icon.png' %}"
       rel="apple-touch-icon"
     />
 
@@ -48,7 +48,7 @@
       >
         <a href="{% url 'index' %}" class="logo d-flex align-items-center">
           <!-- Uncomment the line below if you also wish to use an image logo -->
-          <!-- <img src="assets/img/logo.png" alt=""> -->
+          <!-- <img src="{% static 'img/logo.png' %}" alt=""> -->
           <h1>ZenBlog</h1>
         </a>
 
@@ -56,32 +56,32 @@
           <ul>
             <li><a href="{% url 'index' %}">Home</a></li>
             <li class="dropdown">
-              <a href=""
+              <a href="category.html"
                 ><span>Categories</span>
                 <i class="bi bi-chevron-down dropdown-indicator"></i
               ></a>
               <ul>
                 <li>
-                  <a href="{% url 'categories' %}?categories=Sports">Sports</a>
+                  <a href="{% url 'categories' %}?category=Sports">Sports</a>
                 </li>
                 <li>
-                  <a href="{% url 'categories'%}?categories=Politics"
+                  <a href="{% url 'categories' %}?category=Politics"
                     >Politics</a
                   >
                 </li>
                 <li>
-                  <a href="{% url 'categories'%}?categories=Business"
+                  <a href="{% url 'categories' %}?category=Business"
                     >Business</a
                   >
                 </li>
                 <li>
-                  <a href="{% url 'categories'%}?categories=Fashion">Fashion</a>
+                  <a href="{% url 'categories' %}?category=Fashion">Fashion</a>
                 </li>
               </ul>
             </li>
 
             <li><a href="{% url 'about' %}">About</a></li>
-            <li><a href="">Contact</a></li>
+            <li><a href="{% url 'contact' %}">Contact</a></li>
           </ul>
         </nav>
         <!-- .navbar -->
@@ -112,8 +112,9 @@
     </header>
     <!-- End Header -->
 
-    {% block content %} {% endblock %}
+    {% block content%} {% endblock%}
 
+    <!-- ======= Footer ======= -->
     <footer id="footer" class="footer">
       <div class="footer-content">
         <div class="container">
@@ -146,7 +147,9 @@
                   >
                 </li>
                 <li>
-                  <a href=""><i class="bi bi-chevron-right"></i> Contact</a>
+                  <a href="{% url 'contact' %}"
+                    ><i class="bi bi-chevron-right"></i> Contact</a
+                  >
                 </li>
               </ul>
             </div>
@@ -154,22 +157,22 @@
               <h3 class="footer-heading">Categories</h3>
               <ul class="footer-links list-unstyled">
                 <li>
-                  <a href="{% url 'categories'%}?category=Business"
+                  <a href="{% url 'categories' %}?category=Business"
                     ><i class="bi bi-chevron-right"></i> Business</a
                   >
                 </li>
                 <li>
-                  <a href="{% url 'categories'%}?category=Sports"
+                  <a href="{% url 'categories' %}?category=Sports"
                     ><i class="bi bi-chevron-right"></i> Sports</a
                   >
                 </li>
                 <li>
-                  <a href="{% url 'categories'%}?category=Politics"
+                  <a href="{% url 'categories' %}?category=Politics"
                     ><i class="bi bi-chevron-right"></i> Politics</a
                   >
                 </li>
                 <li>
-                  <a href="{% url 'categories'%}?category=Fashion"
+                  <a href="{% url 'categories' %}?category=Fashion"
                     ><i class="bi bi-chevron-right"></i> Fashion</a
                   >
                 </li>
@@ -183,7 +186,7 @@
                 <li>
                   <a href="single-post.html" class="d-flex align-items-center">
                     <img
-                      src="{% static '/img/post-sq-1.jpg' %}"
+                      src="{% static 'img/post-sq-1.jpg' %}"
                       alt=""
                       class="img-fluid me-3"
                     />
@@ -201,7 +204,7 @@
                 <li>
                   <a href="single-post.html" class="d-flex align-items-center">
                     <img
-                      src="{% static '/img/post-sq-2.jpg' %}"
+                      src="{% static 'img/post-sq-2.jpg' %}"
                       alt=""
                       class="img-fluid me-3"
                     />
@@ -222,7 +225,7 @@
                 <li>
                   <a href="single-post.html" class="d-flex align-items-center">
                     <img
-                      src="{% static '/img/post-sq-3.jpg' %}"
+                      src="{% static 'img/post-sq-3.jpg' %}"
                       alt=""
                       class="img-fluid me-3"
                     />
@@ -243,7 +246,7 @@
                 <li>
                   <a href="single-post.html" class="d-flex align-items-center">
                     <img
-                      src="{% static '/img/post-sq-4.jpg ' %}"
+                      src="{% static 'img/post-sq-4.jpg' %}"
                       alt=""
                       class="img-fluid me-3"
                     />
@@ -287,11 +290,13 @@
 
             <div class="col-md-6">
               <div class="social-links mb-3 mb-lg-0 text-center text-md-end">
-                <a href="" class="twitter"><i class="bi bi-twitter"></i></a>
-                <a href="" class="facebook"><i class="bi bi-facebook"></i></a>
-                <a href="" class="instagram"><i class="bi bi-instagram"></i></a>
-                <a href="" class="google-plus"><i class="bi bi-skype"></i></a>
-                <a href="" class="linkedin"><i class="bi bi-linkedin"></i></a>
+                <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+                <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+                <a href="#" class="instagram"
+                  ><i class="bi bi-instagram"></i
+                ></a>
+                <a href="#" class="google-plus"><i class="bi bi-skype"></i></a>
+                <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
               </div>
             </div>
           </div>

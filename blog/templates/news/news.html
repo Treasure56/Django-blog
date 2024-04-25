@@ -1,4 +1,4 @@
-{% extends 'base.html' %} {% load static %} {% block content %}
+{%extends 'base.html'%} {% load static %} {% block content%}
 
 <main id="main">
   <section>
@@ -7,174 +7,45 @@
         <div class="col-md-9" data-aos="fade-up">
           <h3 class="category-title">Category: Business</h3>
 
-          <div class="d-md-flex post-entry-2 half">
-            <a href="single-post.html" class="me-4 thumbnail">
-              <img
-                src="{% static 'img/post-landscape-6.jpg' %}"
-                alt=""
-                class="img-fluid"
-              />
-            </a>
-            <div>
-              <div class="post-meta">
-                <span class="date">Culture</span>
-                <span class="mx-1">&bullet;</span> <span>Jul 5th '22</span>
-              </div>
-              <h3>
-                <a href="single-post.html"
-                  >What is the son of Football Coach John Gruden, Deuce Gruden
-                  doing Now?</a
-                >
-              </h3>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Distinctio placeat exercitationem magni voluptates dolore.
-                Tenetur fugiat voluptates quas, nobis error deserunt aliquam
-                temporibus sapiente, laudantium dolorum itaque libero eos
-                deleniti?
-              </p>
-              <div class="d-flex align-items-center author">
-                <div class="name">
-                  <h3 class="m-0 p-0">Wade Warren</h3>
+          <div class="col-md-9" data-aos="fade-up">
+            {% if blognews %} {% for blog in blognews %}
+            <div class="d-md-flex post-entry-2 half">
+              <a href="{% url 'single' blog.id %}" class="me-4 thumbnail">
+                <img
+                  src="{{blog.photo.url}}"
+                  width="100%"
+                  height="300"
+                  alt=""
+                  class=""
+                />
+              </a>
+              <div>
+                <div class="post-meta">
+                  <span class="date">{{ blog.category }}</span>
+                  <span class="mx-1">&bullet;</span>
+                  <span>{{ blog.blog_date }}</span>
+                </div>
+                <h3>
+                  <a href="{% url 'single' blog.id %}">{{ blog.title}}</a>
+                </h3>
+                <p>
+                  <span> {{ blog.content|slice:":250" }} </span>
+                  {% if blog.content|length > 250 %}
+                  <span>.....</span>
+                  {% endif %}
+                </p>
+                <div class="d-flex align-items-center author">
+                  <div class="name">
+                    <h3 class="m-0 p-0">{{ blog.reporter }}</h3>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-
-          <div class="d-md-flex post-entry-2 half">
-            <a href="single-post.html" class="me-4 thumbnail">
-              <img
-                src="{% static 'img/post-landscape-1.jpg '%}"
-                alt=""
-                class="img-fluid"
-              />
-            </a>
-            <div>
-              <div class="post-meta">
-                <span class="date">Culture</span>
-                <span class="mx-1">&bullet;</span> <span>Jul 5th '22</span>
-              </div>
-              <h3>
-                <a href="single-post.html"
-                  >What is the son of Football Coach John Gruden, Deuce Gruden
-                  doing Now?</a
-                >
-              </h3>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Distinctio placeat exercitationem magni voluptates dolore.
-                Tenetur fugiat voluptates quas, nobis error deserunt aliquam
-                temporibus sapiente, laudantium dolorum itaque libero eos
-                deleniti?
-              </p>
-              <div class="d-flex align-items-center author">
-                <div class="name">
-                  <h3 class="m-0 p-0">Wade Warren</h3>
-                </div>
-              </div>
+            {% endfor %} {% else %}
+            <div class="d-md-flex post-entry-2 half">
+              <p>No news uploaded yet...</p>
             </div>
-          </div>
-
-          <div class="d-md-flex post-entry-2 half">
-            <a href="single-post.html" class="me-4 thumbnail">
-              <img
-                src="{% static 'img/post-landscape-2.jpg' %}"
-                alt=""
-                class="img-fluid"
-              />
-            </a>
-            <div>
-              <div class="post-meta">
-                <span class="date">Culture</span>
-                <span class="mx-1">&bullet;</span> <span>Jul 5th '22</span>
-              </div>
-              <h3>
-                <a href="single-post.html"
-                  >What is the son of Football Coach John Gruden, Deuce Gruden
-                  doing Now?</a
-                >
-              </h3>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Distinctio placeat exercitationem magni voluptates dolore.
-                Tenetur fugiat voluptates quas, nobis error deserunt aliquam
-                temporibus sapiente, laudantium dolorum itaque libero eos
-                deleniti?
-              </p>
-              <div class="d-flex align-items-center author">
-                <div class="name">
-                  <h3 class="m-0 p-0">Wade Warren</h3>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="d-md-flex post-entry-2 half">
-            <a href="single-post.html" class="me-4 thumbnail">
-              <img
-                src="{% static 'img/post-landscape-3.jpg' %}"
-                alt=""
-                class="img-fluid"
-              />
-            </a>
-            <div>
-              <div class="post-meta">
-                <span class="date">Culture</span>
-                <span class="mx-1">&bullet;</span> <span>Jul 5th '22</span>
-              </div>
-              <h3>
-                <a href="single-post.html"
-                  >What is the son of Football Coach John Gruden, Deuce Gruden
-                  doing Now?</a
-                >
-              </h3>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Distinctio placeat exercitationem magni voluptates dolore.
-                Tenetur fugiat voluptates quas, nobis error deserunt aliquam
-                temporibus sapiente, laudantium dolorum itaque libero eos
-                deleniti?
-              </p>
-              <div class="d-flex align-items-center author">
-                <div class="name">
-                  <h3 class="m-0 p-0">Wade Warren</h3>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="d-md-flex post-entry-2 half">
-            <a href="single-post.html" class="me-4 thumbnail">
-              <img
-                src="{% static 'img/post-landscape-4.jpg' %}"
-                alt=""
-                class="img-fluid"
-              />
-            </a>
-            <div>
-              <div class="post-meta">
-                <span class="date">Culture</span>
-                <span class="mx-1">&bullet;</span> <span>Jul 5th '22</span>
-              </div>
-              <h3>
-                <a href="single-post.html"
-                  >What is the son of Football Coach John Gruden, Deuce Gruden
-                  doing Now?</a
-                >
-              </h3>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Distinctio placeat exercitationem magni voluptates dolore.
-                Tenetur fugiat voluptates quas, nobis error deserunt aliquam
-                temporibus sapiente, laudantium dolorum itaque libero eos
-                deleniti?
-              </p>
-              <div class="d-flex align-items-center author">
-                <div class="name">
-                  <h3 class="m-0 p-0">Wade Warren</h3>
-                </div>
-              </div>
-            </div>
+            {% endif %}
           </div>
         </div>
 
@@ -223,74 +94,6 @@
                   </h2>
                   <span class="author mb-3 d-block">Jenny Wilson</span>
                 </div>
-
-                <div class="post-entry-1 border-bottom">
-                  <div class="post-meta">
-                    <span class="date">Lifestyle</span>
-                    <span class="mx-1">&bullet;</span> <span>Jul 5th '22</span>
-                  </div>
-                  <h2 class="mb-2">
-                    <a href="#"
-                      >17 Pictures of Medium Length Hair in Layers That Will
-                      Inspire Your New Haircut</a
-                    >
-                  </h2>
-                  <span class="author mb-3 d-block">Jenny Wilson</span>
-                </div>
-
-                <div class="post-entry-1 border-bottom">
-                  <div class="post-meta">
-                    <span class="date">Culture</span>
-                    <span class="mx-1">&bullet;</span> <span>Jul 5th '22</span>
-                  </div>
-                  <h2 class="mb-2">
-                    <a href="#"
-                      >9 Half-up/half-down Hairstyles for Long and Medium
-                      Hair</a
-                    >
-                  </h2>
-                  <span class="author mb-3 d-block">Jenny Wilson</span>
-                </div>
-
-                <div class="post-entry-1 border-bottom">
-                  <div class="post-meta">
-                    <span class="date">Lifestyle</span>
-                    <span class="mx-1">&bullet;</span> <span>Jul 5th '22</span>
-                  </div>
-                  <h2 class="mb-2">
-                    <a href="#"
-                      >Life Insurance And Pregnancy: A Working Mom’s Guide</a
-                    >
-                  </h2>
-                  <span class="author mb-3 d-block">Jenny Wilson</span>
-                </div>
-
-                <div class="post-entry-1 border-bottom">
-                  <div class="post-meta">
-                    <span class="date">Business</span>
-                    <span class="mx-1">&bullet;</span> <span>Jul 5th '22</span>
-                  </div>
-                  <h2 class="mb-2">
-                    <a href="#"
-                      >The Best Homemade Masks for Face (keep the Pimples
-                      Away)</a
-                    >
-                  </h2>
-                  <span class="author mb-3 d-block">Jenny Wilson</span>
-                </div>
-
-                <div class="post-entry-1 border-bottom">
-                  <div class="post-meta">
-                    <span class="date">Lifestyle</span>
-                    <span class="mx-1">&bullet;</span> <span>Jul 5th '22</span>
-                  </div>
-                  <h2 class="mb-2">
-                    <a href="#"
-                      >10 Life-Changing Hacks Every Working Mom Should Know</a
-                    >
-                  </h2>
-                  <span class="author mb-3 d-block">Jenny Wilson</span>
-                </div>
               </div>
               <!-- End Popular -->
             </div>
@@ -318,16 +121,24 @@
             <h3 class="aside-title">Categories</h3>
             <ul class="aside-links list-unstyled">
               <li>
-                <a href=""><i class="bi bi-chevron-right"></i> Business</a>
+                <a href="category.html"
+                  ><i class="bi bi-chevron-right"></i> Business</a
+                >
               </li>
               <li>
-                <a href=""><i class="bi bi-chevron-right"></i> Sports</a>
+                <a href="category.html"
+                  ><i class="bi bi-chevron-right"></i> Sports</a
+                >
               </li>
               <li>
-                <a href=""><i class="bi bi-chevron-right"></i> Politics</a>
+                <a href="category.html"
+                  ><i class="bi bi-chevron-right"></i> Politics</a
+                >
               </li>
               <li>
-                <a href=""><i class="bi bi-chevron-right"></i> Fashion</a>
+                <a href="category.html"
+                  ><i class="bi bi-chevron-right"></i> Fashion</a
+                >
               </li>
             </ul>
           </div>
